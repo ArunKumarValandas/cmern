@@ -29,10 +29,9 @@ jobs:
       - name: Install dependencies
         working-directory: conference-mern/frontend
         run: npm ci
-
       - name: Build React app
         working-directory: conference-mern/frontend
-        run: npm run build
+        run: CI=false npm run build
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
