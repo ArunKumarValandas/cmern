@@ -1,158 +1,3 @@
-
-// import {
-//   BrowserRouter,
-//   Routes,
-//   Route,
-//   Link,
-//   useLocation,
-//   useNavigate,
-// } from "react-router-dom";
-
-// // Pages
-// import Home from "./pages/Home";
-// import Commitees from "./pages/Commitees";
-// import Sessions from "./pages/Sessions";
-// import Speakers from "./pages/Speakers";
-// import Register from "./pages/Register";
-// import Contact from "./pages/Contact";
-// // import Login from "./pages/Login";
-// import Footer from "./pages/Footer";
-// import CallForPapers from "./pages/CallForPapers";
-
-// const NAVBAR_HEIGHT = 70;
-
-// /* ================= NAVBAR COMPONENT ================= */
-// function Navbar() {
-//   const location = useLocation();
-//   const navigate = useNavigate();
-
-//   const isHome = location.pathname === "/";
-//   const isLoggedIn = !!localStorage.getItem("token");
-
-//   const logout = () => {
-//     localStorage.removeItem("token"); // 🔥 remove JWT
-//     navigate("/login");               // 🔁 redirect
-//   };
-
-//   return (
-//     <>
-//       {/* NAVBAR */}
-//       <nav
-//         style={{
-//           position: isHome ? "absolute" : "relative",
-//           top: 0,
-//           width: "100%",
-//           height: `${NAVBAR_HEIGHT}px`,
-//           padding: "20px",
-//           boxSizing: "border-box",
-//           background: isHome ? "transparent" : "#222",
-//           color: "white",
-//           display: "flex",
-//           justifyContent: "space-between",
-//           alignItems: "center",
-//           zIndex: 1000,
-//         }}
-//       >
-//         {/* LEFT LINKS */}
-//         <div>
-//           <Link style={linkStyle} to="/">Home</Link>
-//           <Link style={linkStyle} to="/Commitees">Commitees</Link>
-//           <Link style={linkStyle} to="/sessions">Sessions</Link>
-//           <Link style={linkStyle} to="/speakers">Speakers</Link>
-//           <Link style={linkStyle} to="/contact">Contact</Link>
-//           <Link style={linkStyle} to="/CallForPapers">CallForPapers</Link>
-//         </div>
-
-//         {/* RIGHT AUTH */}
-//         <div>
-//           {isLoggedIn ? (
-//             <button
-//               onClick={logout}
-//               style={{
-//                 background: "transparent",
-//                 color: "white",
-//                 border: "1px solid white",
-//                 padding: "6px 12px",
-//                 borderRadius: "4px",
-//                 cursor: "pointer",
-//               }}
-//             >
-//               Logout
-//             </button>
-//           ) : (
-//             <>
-//               {/* <Link style={linkStyle} to="/login">Login</Link> */}
-//               <Link
-//                 to="/register"
-//                 style={{
-//                   ...linkStyle,
-//                   border: "1px solid white",
-//                   padding: "6px 12px",
-//                   borderRadius: "4px",
-//                 }}
-//               >
-//                 Register
-//               </Link>
-//             </>
-//           )}
-//         </div>
-//       </nav>
-
-//       {/* HORIZONTAL LINE BELOW NAVBAR */}
-//       <div
-//         style={{
-//           position: isHome ? "absolute" : "relative",
-//           top: isHome ? `${NAVBAR_HEIGHT}px` : 0,
-//           width: "100%",
-//           height: "1px",
-//           background: "rgba(255, 255, 255, 0.35)",
-//           zIndex: 999,
-//         }}
-//       />
-//     </>
-//   );
-// }
-
-// /* ================= APP COMPONENT ================= */
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-        
-//         {/* NAVBAR */}
-//         <Navbar />
-
-//         {/* PAGE CONTENT */}
-//         <div style={{ flex: 1 }}>
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/Commitees" element={<Commitees />} />
-//             <Route path="/sessions" element={<Sessions />} />
-//             <Route path="/speakers" element={<Speakers />} />
-//             <Route path="/register" element={<Register />} />
-//             {/* <Route path="/login" element={<Login />} /> */}
-//             <Route path="/contact" element={<Contact />} />
-//             <Route path="/CallForPapers" element={<CallForPapers />} />
-//           </Routes>
-//         </div>
-
-//         {/* FOOTER */}
-//         <Footer />
-//       </div>
-//     </BrowserRouter>
-//   );
-// }
-
-// /* ================= COMMON LINK STYLE ================= */
-// const linkStyle = {
-//   color: "white",
-//   margin: "10px",
-//   textDecoration: "none",
-// };
-
-// export default App;
-
-
 import { useState, useEffect } from "react";
 import {
   BrowserRouter,
@@ -165,14 +10,35 @@ import {
 
 // Pages
 import Home from "./pages/Home";
+import About from "./pages/About";
+import AuthorsCorner from "./pages/AuthorsCorner";
 import Commitees from "./pages/Commitees";
-import Sessions from "./pages/Sessions";
 import Speakers from "./pages/Speakers";
-import Register from "./pages/Register";
-// import Login from "./pages/Login";
+import Events from "./pages/Events";
+import Sponsorship from "./pages/Sponsorship";
+import Publication from "./pages/Publication";
 import Contact from "./pages/Contact";
+import Register from "./pages/Register";
 import Footer from "./pages/Footer";
-import CallForPapers from "./pages/CallForPapers";
+// About Details
+import AnuragUniversityDetails from "./pages/AboutDetails/AnuragUniversityDetails";
+import MechanicalEngineeringDetails from "./pages/AboutDetails/MechanicalEngineeringDetails";
+import ConferenceDetails from "./pages/AboutDetails/ConferenceDetails";
+// Author's Corner Details
+import CallForPapersDetails from "./pages/AuthorsCornerDetails/CallForPapersDetails";
+import ConferenceTracksDetails from "./pages/AuthorsCornerDetails/ConferenceTracksDetails";
+import SubmissionPortalDetails from "./pages/AuthorsCornerDetails/SubmissionPortalDetails";
+// Committee Details
+import InternationalAdvisoryCommitteeDetails from "./pages/CommitteeDetails/InternationalAdvisoryCommitteeDetails";
+import NationalAdvisoryCommitteeDetails from "./pages/CommitteeDetails/NationalAdvisoryCommitteeDetails";
+import OrganizingCommitteeDetails from "./pages/CommitteeDetails/OrganizingCommitteeDetails";
+// Speaker Details
+import KeynoteSpeakersDetails from "./pages/SpeakersDetails/KeynoteSpeakersDetails";
+
+import ChiefGuestDetails from "./pages/SpeakersDetails/ChiefGuestDetails";
+// // Event Details
+import SubmissionDeadlineDetails from "./pages/EventsDetails/SubmissionDeadlineDetails";
+import EventScheduleDetails from "./pages/EventsDetails/EventScheduleDetails";
 
 const NAVBAR_HEIGHT = 70;
 
@@ -187,9 +53,7 @@ function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [isMobile, setIsMobile] = useState(
-    window.innerWidth <= 768
-  );
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleResize = () => {
@@ -198,8 +62,7 @@ function Navbar() {
 
     window.addEventListener("resize", handleResize);
 
-    return () =>
-      window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const logout = () => {
@@ -252,9 +115,7 @@ function Navbar() {
 
           {isMobile && (
             <button
-              onClick={() =>
-                setMenuOpen(!menuOpen)
-              }
+              onClick={() => setMenuOpen(!menuOpen)}
               style={{
                 background: "transparent",
                 color: "white",
@@ -280,53 +141,44 @@ function Navbar() {
                 Home
               </Link>
 
-              <Link
-                style={linkStyle}
-                to="/Commitees"
-              >
-                Commitees
+              <Link style={linkStyle} to="/about">
+                About
               </Link>
 
-              <Link
-                style={linkStyle}
-                to="/sessions"
-              >
-                Sessions
+              <Link style={linkStyle} to="/authors-corner">
+                Author's Corner
               </Link>
 
-              <Link
-                style={linkStyle}
-                to="/speakers"
-              >
+              <Link style={linkStyle} to="/committees">
+                Committees
+              </Link>
+
+              <Link style={linkStyle} to="/speakers">
                 Speakers
               </Link>
 
-              <Link
-                style={linkStyle}
-                to="/CallForPapers"
-              >
-                Call For Papers
+              <Link style={linkStyle} to="/events">
+                Events
               </Link>
 
-              <Link
-                style={linkStyle}
-                to="/contact"
-              >
+              <Link style={linkStyle} to="/sponsorship">
+                Sponsorship
+              </Link>
+
+              <Link style={linkStyle} to="/publications">
+                Publications
+              </Link>
+
+              <Link style={linkStyle} to="/contact">
                 Contact
               </Link>
 
               {isLoggedIn ? (
-                <button
-                  onClick={logout}
-                  style={logoutButton}
-                >
+                <button onClick={logout} style={logoutButton}>
                   Logout
                 </button>
               ) : (
-                <Link
-                  to="/register"
-                  style={registerButton}
-                >
+                <Link to="/register" style={registerButton}>
                   Register
                 </Link>
               )}
@@ -347,54 +199,42 @@ function Navbar() {
               padding: "10px",
             }}
           >
-            <Link
-              style={mobileLink}
-              to="/"
-              onClick={closeMenu}
-            >
+            <Link style={mobileLink} to="/" onClick={closeMenu}>
               Home
             </Link>
 
-            <Link
-              style={mobileLink}
-              to="/Commitees"
-              onClick={closeMenu}
-            >
-              Commitees
+            <Link style={mobileLink} to="/about" onClick={closeMenu}>
+              About
             </Link>
 
-            <Link
-              style={mobileLink}
-              to="/sessions"
-              onClick={closeMenu}
-            >
-              Sessions
+            <Link style={mobileLink} to="/authors-corner" onClick={closeMenu}>
+              Author's Corner
             </Link>
 
-            <Link
-              style={mobileLink}
-              to="/speakers"
-              onClick={closeMenu}
-            >
+            <Link style={mobileLink} to="/committees" onClick={closeMenu}>
+              Committees
+            </Link>
+
+            <Link style={mobileLink} to="/speakers" onClick={closeMenu}>
               Speakers
             </Link>
 
-            <Link
-              style={mobileLink}
-              to="/CallForPapers"
-              onClick={closeMenu}
-            >
-              Call For Papers
+            <Link style={mobileLink} to="/events" onClick={closeMenu}>
+              Events
             </Link>
 
-            <Link
-              style={mobileLink}
-              to="/contact"
-              onClick={closeMenu}
-            >
+            <Link style={mobileLink} to="/sponsorship" onClick={closeMenu}>
+              Sponsorship
+            </Link>
+
+            <Link style={mobileLink} to="/publications" onClick={closeMenu}>
+              Publications
+            </Link>
+
+            <Link style={mobileLink} to="/contact" onClick={closeMenu}>
               Contact
             </Link>
-                        {isLoggedIn ? (
+            {isLoggedIn ? (
               <button
                 onClick={() => {
                   logout();
@@ -405,11 +245,7 @@ function Navbar() {
                 Logout
               </button>
             ) : (
-              <Link
-                to="/register"
-                style={registerButton}
-                onClick={closeMenu}
-              >
+              <Link to="/register" style={registerButton} onClick={closeMenu}>
                 Register
               </Link>
             )}
@@ -448,42 +284,84 @@ function App() {
 
         <div style={{ flex: 1 }}>
           <Routes>
+            {/* ==================== MAIN PAGES ==================== */}
+
             <Route path="/" element={<Home />} />
 
+            <Route path="/about" element={<About />} />
+
+            <Route path="/authors-corner" element={<AuthorsCorner />} />
+
             <Route
-              path="/Commitees"
-              element={<Commitees />}
+              path="/authors-corner/call-for-papers"
+              element={<CallForPapersDetails />}
             />
 
             <Route
-              path="/sessions"
-              element={<Sessions />}
+              path="/authors-corner/conference-tracks"
+              element={<ConferenceTracksDetails />}
             />
 
             <Route
-              path="/speakers"
-              element={<Speakers />}
+              path="/authors-corner/submission-portal"
+              element={<SubmissionPortalDetails />}
+            />
+            <Route
+              path="/committees/international-advisory"
+              element={<InternationalAdvisoryCommitteeDetails />}
             />
 
             <Route
-              path="/register"
-              element={<Register />}
-            />
-
-            {/* <Route
-              path="/login"
-              element={<Login />}
-            /> */}
-
-            <Route
-              path="/contact"
-              element={<Contact />}
+              path="/committees/national-advisory"
+              element={<NationalAdvisoryCommitteeDetails />}
             />
 
             <Route
-              path="/CallForPapers"
-              element={<CallForPapers />}
+              path="/committees/organizing"
+              element={<OrganizingCommitteeDetails />}
             />
+            <Route
+              path="/speakers/keynote"
+              element={<KeynoteSpeakersDetails />}
+            />
+
+            <Route
+              path="/speakers/chief-guest"
+              element={<ChiefGuestDetails />}
+            />
+            <Route
+              path="/events/submission-deadline"
+              element={<SubmissionDeadlineDetails />}
+            />
+
+            <Route path="/events/schedule" element={<EventScheduleDetails />} />
+            <Route path="/committees" element={<Commitees />} />
+
+            <Route path="/speakers" element={<Speakers />} />
+
+            <Route path="/events" element={<Events />} />
+
+            <Route path="/sponsorship" element={<Sponsorship />} />
+
+            <Route path="/publications" element={<Publication />} />
+
+            <Route path="/contact" element={<Contact />} />
+
+            <Route path="/register" element={<Register />} />
+
+            {/* ==================== ABOUT DETAILS ==================== */}
+
+            <Route
+              path="/about/anurag-university"
+              element={<AnuragUniversityDetails />}
+            />
+
+            <Route
+              path="/about/mechanical-engineering"
+              element={<MechanicalEngineeringDetails />}
+            />
+
+            <Route path="/about/conference" element={<ConferenceDetails />} />
           </Routes>
         </div>
 
