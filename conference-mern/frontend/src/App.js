@@ -99,7 +99,7 @@ function Navbar() {
             alignItems: "center",
           }}
         >
-          {/* LOGO */}
+          {/* LOGO
 
           <h2
             style={{
@@ -109,7 +109,22 @@ function Navbar() {
             }}
           >
             ICIFMEDE
-          </h2>
+
+            
+          </h2> */}
+          {/* LOGO */}
+<img
+  src="/images/ICIFMEDE2027_logo.png"
+  alt="ICIFMEDE 2027"
+  style={{
+    width: isMobile ? "110px" : "150px",
+    height: "50px",
+    objectFit: "contain",
+    objectPosition: "left center",
+    display: "block",
+    flexShrink: 0,
+  }}
+/>
 
           {/* HAMBURGER */}
 
