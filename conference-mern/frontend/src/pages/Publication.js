@@ -74,7 +74,7 @@ export default function Publication() {
           }}
         >
           All accepted papers will be published in
-          <strong> AIP Conference Proceedings</strong>.
+          <strong> Conference Proceedings</strong>.
         </p>
 
         <p

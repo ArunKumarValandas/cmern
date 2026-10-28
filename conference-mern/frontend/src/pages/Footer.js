@@ -1,26 +1,28 @@
-import "./footer.css";
-
 export default function Footer() {
   return (
-    <footer className="site-footer">
-      <p className="footer-title">Organised by</p>
-
-      <p className="footer-text">
-        Department of Mechanical Engineering
-      </p>
-
-      <p className="footer-text">
-        Anurag University, Hyderabad, Telangana, India.
-      </p>
-
-      <p className="footer-contact">
-        📧 icifmede2026@anurag.edu.in | ☎ +91 98765 43210
-      </p>
-
-      <p className="footer-copy">
-        © 2026 ICIFMEDE. All Rights Reserved.
-      </p>
+    <footer
+      style={{
+        width: "100%",
+        marginTop: "auto",
+        padding: 0,
+        lineHeight: 0,
+        backgroundColor: "#06264A",
+      }}
+    >
+      <img
+  className="footer-image"
+  src={`${process.env.PUBLIC_URL}/images/footer.png`}
+  alt="ICIFMEDE 2027 conference footer"
+ style={{
+  display: "block",
+  width: "100%",
+  height: "169px",
+  objectFit: "fill",
+  border: 0,
+  margin: 0,
+}}
+/>
+      
     </footer>
   );
 }
-

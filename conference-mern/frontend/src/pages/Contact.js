@@ -149,7 +149,7 @@ export default function Contact() {
             fontSize: isMobile ? "15px" : "16px",
           }}
         >
-          Co - Convenor – ICIFMEDE 2026
+          Convenor – ICIFMEDE 2027
         </p>
 
         <p style={infoRow}>
@@ -159,14 +159,14 @@ export default function Contact() {
         <p style={infoRow}>
           📧 <b>Email:</b>{" "}
           <a
-            href="mailto:icifmede2026@anurag.edu.in"
+            href="mailto:icifmede2027@anurag.edu.in"
             style={{
               color: "#0d6efd",
               textDecoration: "none",
               wordBreak: "break-word",
             }}
           >
-            icifmede2026@anurag.edu.in
+            icifmede2027@anurag.edu.in
           </a>
         </p>
 

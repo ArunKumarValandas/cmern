@@ -57,3 +57,39 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+
+/* ================= NAVBAR LOGO ================= */
+.navbar-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.96);
+  padding: 5px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navbar-logo-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+.navbar-logo-img {
+  width: 160px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo-link {
+    padding: 4px 8px;
+  }
+  .navbar-logo-img {
+    width: 110px;
+    height: 40px;
+  }
+}

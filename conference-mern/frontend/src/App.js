@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./App.css";
 import {
   BrowserRouter,
   Routes,
@@ -83,7 +84,7 @@ function Navbar() {
           left: 0,
           width: "100%",
           minHeight: NAVBAR_HEIGHT,
-          background: isHome ? "transparent" : "#222",
+      background: "#0B1F3A",
           color: "#fff",
           zIndex: 1000,
           boxSizing: "border-box",
@@ -99,17 +100,35 @@ function Navbar() {
             alignItems: "center",
           }}
         >
-         <img
-  src="/images/ICIFMEDE2027_logo.png"
-  alt="ICIFMEDE 2027"
-  style={{
-    width: isMobile ? "110px" : "150px",
-    height: "50px",
-    objectFit: "contain",
-    display: "block",
-    flexShrink: 0,
-  }}
-/>
+                   {/* LOGO */}
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className="navbar-logo-link"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textDecoration: "none",
+              backgroundColor: "rgba(255, 255, 255, 0.96)",
+              padding: isMobile ? "4px 8px" : "5px 12px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+              flexShrink: 0,
+            }}
+          >
+            <img
+              src={process.env.PUBLIC_URL + "/images/ICIFMEDE2027_logo.png"}
+              alt="ICIFMEDE 2027"
+              className="navbar-logo-img"
+              style={{
+                width: isMobile ? "110px" : "160px",
+                height: isMobile ? "40px" : "48px",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+          </Link>
 
           {/* HAMBURGER */}
 
@@ -135,6 +154,8 @@ function Navbar() {
               style={{
                 display: "flex",
                 alignItems: "center",
+                flexWrap: "wrap",
+                justifyContent: "flex-end",
               }}
             >
               <Link style={linkStyle} to="/">
@@ -256,7 +277,7 @@ function Navbar() {
       {/* Horizontal Line */}
       <div
         style={{
-          position: isHome ? "absolute" : "relative",
+        position: "relative",
           top: isHome ? `${NAVBAR_HEIGHT}px` : 0,
           width: "100%",
           height: "1px",
@@ -272,7 +293,7 @@ function Navbar() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div
         style={{
           minHeight: "100vh",

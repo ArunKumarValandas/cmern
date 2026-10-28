@@ -203,7 +203,7 @@ export default function Register() {
             fontSize: isMobile ? "15px" : "17px",
           }}
         >
-          Upon receiving confirmation email from the ICIFMEDE 2025, register
+          Upon receiving confirmation email from the ICIFMEDE 2027, register
           for the conference using the following link:
         </p>
 
@@ -268,7 +268,7 @@ export default function Register() {
                 <td style={thTdStyle}>
                   Registration + Publication in
                   <br />
-                  AIP Conference Proceedings
+                   Conference Proceedings
                   <br />
                   (Scopus indexed)
                 </td>

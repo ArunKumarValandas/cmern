@@ -131,7 +131,7 @@ export default function Sponsorship() {
                     textAlign: "center",
                   }}
                 >
-                  ₹1,00,000
+                  ₹2,00,000
                 </td>
               </tr>
 
@@ -152,7 +152,7 @@ export default function Sponsorship() {
                     textAlign: "center",
                   }}
                 >
-                  ₹50,000
+                  ₹1,00,000
                 </td>
               </tr>
 
@@ -173,7 +173,7 @@ export default function Sponsorship() {
                     textAlign: "center",
                   }}
                 >
-                  ₹25,000
+                  ₹50,000
                 </td>
               </tr>
 
@@ -194,7 +194,7 @@ export default function Sponsorship() {
                     textAlign: "center",
                   }}
                 >
-                  ₹10,000
+                  ₹25,000
                 </td>
               </tr>
             </tbody>
