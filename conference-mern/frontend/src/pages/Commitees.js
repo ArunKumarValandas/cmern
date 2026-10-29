@@ -165,7 +165,6 @@ export default function Committees() {
             key={title}
             style={{ marginBottom: "35px" }}
           >
-            {/* SECTION HEADING */}
             <div
               style={{
                 display: "flex",
@@ -190,7 +189,6 @@ export default function Committees() {
               </h2>
             </div>
 
-            {/* WHITE CONTAINER */}
             <div
               style={{
                 background: "#ffffff",
@@ -202,7 +200,6 @@ export default function Committees() {
                 width: "100%",
               }}
             >
-              {/* RESPONSIVE MEMBER CARDS */}
               <div
                 style={{
                   display: "grid",
@@ -228,7 +225,6 @@ export default function Committees() {
                       MEMBER {member.no}
                     </p>
 
-                    {/* ORGANIZING COMMITTEE ROLE */}
                     {index === 2 && (
                       <p
                         style={{
@@ -247,7 +243,6 @@ export default function Committees() {
                       </p>
                     )}
 
-                    {/* MEMBER NAME */}
                     <h3
                       style={{
                         color: "#073b73",
@@ -260,7 +255,6 @@ export default function Committees() {
                       {member.name}
                     </h3>
 
-                    {/* DEPARTMENT / INSTITUTION */}
                     {member.department && (
                       <>
                         <p style={labelStyle}>
@@ -272,7 +266,6 @@ export default function Committees() {
                       </>
                     )}
 
-                    {/* COUNTRY */}
                     {member.country && (
                       <>
                         <p style={labelStyle}>Country</p>
