@@ -1,3 +1,4 @@
+
 .hero-section {
   min-height: max(850px, calc(100vh - 97px));
   width: 100%;
@@ -10,6 +11,7 @@
   justify-content: center;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .hero-overlay {
@@ -20,6 +22,7 @@
   align-items: center;
   justify-content: center;
   padding: 35px 20px;
+  box-sizing: border-box;
 }
 
 /* HERO CONTENT */
@@ -31,13 +34,15 @@
 }
 
 .hero-content h1 {
-  font-size: clamp(16px, 1.8vw, 24px);
+  font-size: clamp(26px, 3.5vw, 48px);
+  font-weight: 700;
   margin: 0 0 8px;
   letter-spacing: 1px;
 }
 
 .hero-content h2 {
   font-size: clamp(26px, 3.5vw, 48px);
+  font-weight: 700;
   line-height: 1.2;
   margin: 0 0 14px;
 }
@@ -46,6 +51,14 @@
   color: #7cfc00;
   font-size: clamp(20px, 2.5vw, 30px);
   margin: 0 0 8px;
+}
+
+/* EVENT DATE COLOR */
+.hero-content .event-date {
+  color: #FFD700;
+  font-size: clamp(14px, 1.4vw, 19px);
+  line-height: 1.4;
+  margin: 6px 0;
 }
 
 .hero-content p {
@@ -81,11 +94,19 @@
     padding: 30px 15px;
   }
 
+  .hero-content h1 {
+    font-size: clamp(24px, 6vw, 34px);
+  }
+
   .hero-content h2 br {
     display: none;
   }
 
   .hero-content h2 {
     font-size: clamp(24px, 6vw, 34px);
+  }
+
+  .hero-content .event-date {
+    color: #FFD700;
   }
 }

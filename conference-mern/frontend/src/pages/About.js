@@ -1,156 +1,179 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
 
-function About() {
-  const navigate = useNavigate();
+import React from "react";
+
+export default function About() {
+  const isMobile = window.innerWidth <= 768;
+
+  const sections = [
+    {
+      title: "ABOUT ANURAG UNIVERSITY",
+      content: (
+        <>
+          <h3>ABOUT ANURAG UNIVERSITY</h3>
+
+          <p>
+            Anurag University (formerly known as Anurag Group
+            of Institutions) was established in 2002 and has
+            evolved into a leading educational institution in
+            Telangana. It focuses on providing quality higher
+            education, promoting research, encouraging
+            innovation, and developing technical skills to
+            prepare students for the modern technological world.
+          </p>
+
+          <p>
+            <strong>NIRF 2027</strong> | Quality Education |
+            Technical Excellence
+          </p>
+        </>
+      ),
+    },
+    {
+      title: "DEPARTMENT OF MECHANICAL ENGINEERING",
+      content: (
+        <>
+          <p>
+            The Department of Mechanical Engineering was
+            established in 2004 and was accredited by NBA
+            under Tier-I in 2015. It was subsequently
+            reaccredited, with the stated validity extending
+            to June 2025.
+          </p>
+
+          <p>
+            The department comprises qualified faculty
+            members and technical staff, including
+            doctorates with diverse specialisations.
+          </p>
+
+          <ul>
+            <li>
+              Value-added courses on{" "}
+              <strong>SOLIDWORKS, CREO and ANSYS.</strong>
+            </li>
+
+            <li>
+              <strong>19 MoUs</strong> with core engineering
+              companies.
+            </li>
+
+            <li>
+              Department library with over{" "}
+              <strong>300 volumes</strong> and e-journals.
+            </li>
+
+            <li>
+              Professional chapters including ISTE, SAE,
+              IEEE-RAS and NTSC, along with student clubs
+              such as FEM, CAD, MARK and DiMaC.
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: "ABOUT THE CONFERENCE",
+      content: (
+        <>
+          <p>
+            The International Conference on Innovations in
+            Future Mechanical Engineering in Digital Era
+            (ICIFMEDE 2027) aims to bring together experts
+            from academic, scientific and industrial
+            communities to address emerging challenges,
+            present research findings, exchange ideas and
+            explore future directions in mechanical engineering.
+          </p>
+
+          <p>
+            The conference provides a platform for researchers,
+            academicians, industry professionals and students
+            to share innovative ideas, exchange knowledge and
+            discuss advancements in mechanical engineering
+            in the digital era.
+          </p>
+
+          <p>
+            <strong>Date:</strong> June 10–11, 2027
+            <br />
+            <strong>Venue:</strong> Anurag University,
+            Hyderabad, Telangana, India
+          </p>
+        </>
+      ),
+    },
+  ];
+
+  const redBarStyle = {
+    width: "5px",
+    height: "22px",
+    background: "#c62828",
+    marginRight: "10px",
+    flexShrink: 0,
+  };
+
+  const contentStyle = {
+    color: "#333333",
+    fontSize: isMobile ? "13px" : "15px",
+    lineHeight: 1.8,
+  };
 
   return (
-    <>
-      <style>{`
-        .about-section {
-          min-height: 100vh;
-          padding: 120px 7% 80px;
-          background: #f5f7fb;
-        }
+    <div
+      style={{
+        padding: isMobile ? "20px 15px" : "35px",
+        background: "#e6e6ea",
+        minHeight: "100vh",
+        boxSizing: "border-box",
+        fontFamily: "inherit",
+      }}
+    >
+      {sections.map((section) => (
+        <section
+          key={section.title}
+          style={{ marginBottom: "35px" }}
+        >
+          {/* SECTION HEADING */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "18px",
+            }}
+          >
+            <div style={redBarStyle} />
 
-        .about-cards {
-          max-width: 1200px;
-          margin: 0 auto;
-
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 25px;
-        }
-
-        .about-card {
-          background: #ffffff;
-          padding: 32px 25px;
-          min-height: 230px;
-
-          border-radius: 5px;
-
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-
-          transition: transform 0.3s ease,
-                      box-shadow 0.3s ease;
-        }
-
-        .about-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
-        }
-
-        .about-card h2 {
-          color: #073b73;
-          font-size: 20px;
-          margin: 5px 0 15px;
-        }
-
-        .about-card p {
-          color: #444;
-          font-size: 14px;
-          line-height: 1.6;
-          margin: 0 0 25px;
-          flex: 1;
-        }
-
-        .about-card button {
-          background: #073b73;
-          color: white;
-
-          border: none;
-          border-radius: 4px;
-
-          padding: 10px 22px;
-
-          font-size: 14px;
-          cursor: pointer;
-
-          transition: background 0.3s ease;
-        }
-
-        .about-card button:hover {
-          background: #052d59;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-          .about-section {
-            padding: 100px 20px 50px;
-          }
-
-          .about-cards {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
-
-      <section className="about-section">
-        <div className="about-cards">
-
-          {/* 1. About Anurag University */}
-          <div className="about-card">
-            <h2>About Anurag University</h2>
-
-            <p>
-              Know more about Anurag University, its academic
-              excellence, infrastructure and institutional profile.
-            </p>
-
-            <button
-              onClick={() =>
-                navigate("/about/anurag-university")
-              }
+            <h2
+              style={{
+                margin: 0,
+                fontSize: isMobile ? "20px" : "26px",
+                fontWeight: "bold",
+                letterSpacing: "0.5px",
+                color: "#000000",
+                lineHeight: 1.4,
+              }}
             >
-              View Details
-            </button>
+              {section.title}
+            </h2>
           </div>
 
-          {/* 2. Department of Mechanical Engineering */}
-          <div className="about-card">
-            <h2>Department of Mechanical Engineering</h2>
-
-            <p>
-              Learn about the Department of Mechanical Engineering,
-              its facilities, faculty, research and industry connections.
-            </p>
-
-            <button
-              onClick={() =>
-                navigate("/about/mechanical-engineering")
-              }
-            >
-              View Details
-            </button>
+          {/* WHITE CONTENT CARD */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1px solid #dddddd",
+              borderRadius: "10px",
+              padding: isMobile ? "18px" : "25px",
+              boxSizing: "border-box",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              width: "100%",
+              ...contentStyle,
+            }}
+          >
+            {section.content}
           </div>
-
-          {/* 3. About the Conference */}
-          <div className="about-card">
-            <h2>About the Conference</h2>
-
-            <p>
-              Explore ICIFMEDE 2027, its objectives, themes,
-              areas and opportunities for researchers and professionals.
-            </p>
-
-            <button
-              onClick={() =>
-                navigate("/about/conference")
-              }
-            >
-              View Details
-            </button>
-          </div>
-
-        </div>
-      </section>
-    </>
+        </section>
+      ))}
+    </div>
   );
 }
-
-export default About;

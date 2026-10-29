@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+
 import {
   BrowserRouter,
   Routes,
@@ -9,10 +10,10 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-// Pages
+// Main Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
-import AuthorsCorner from "./pages/AuthorsCorner";
+import CallForPapers from "./pages/CallForPapers";
 import Commitees from "./pages/Commitees";
 import Speakers from "./pages/Speakers";
 import Events from "./pages/Events";
@@ -21,23 +22,27 @@ import Publication from "./pages/Publication";
 import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import Footer from "./pages/Footer";
+
 // About Details
 import AnuragUniversityDetails from "./pages/AboutDetails/AnuragUniversityDetails";
 import MechanicalEngineeringDetails from "./pages/AboutDetails/MechanicalEngineeringDetails";
 import ConferenceDetails from "./pages/AboutDetails/ConferenceDetails";
-// Author's Corner Details
+
+// Call for Papers Details
 import CallForPapersDetails from "./pages/AuthorsCornerDetails/CallForPapersDetails";
 import ConferenceTracksDetails from "./pages/AuthorsCornerDetails/ConferenceTracksDetails";
 import SubmissionPortalDetails from "./pages/AuthorsCornerDetails/SubmissionPortalDetails";
+
 // Committee Details
 import InternationalAdvisoryCommitteeDetails from "./pages/CommitteeDetails/InternationalAdvisoryCommitteeDetails";
 import NationalAdvisoryCommitteeDetails from "./pages/CommitteeDetails/NationalAdvisoryCommitteeDetails";
 import OrganizingCommitteeDetails from "./pages/CommitteeDetails/OrganizingCommitteeDetails";
+
 // Speaker Details
 import KeynoteSpeakersDetails from "./pages/SpeakersDetails/KeynoteSpeakersDetails";
-
 import ChiefGuestDetails from "./pages/SpeakersDetails/ChiefGuestDetails";
-// // Event Details
+
+// Event Details
 import SubmissionDeadlineDetails from "./pages/EventsDetails/SubmissionDeadlineDetails";
 import EventScheduleDetails from "./pages/EventsDetails/EventScheduleDetails";
 
@@ -53,8 +58,9 @@ function Navbar() {
   const isLoggedIn = !!localStorage.getItem("token");
 
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth <= 768
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -63,7 +69,9 @@ function Navbar() {
 
     window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const logout = () => {
@@ -84,7 +92,7 @@ function Navbar() {
           left: 0,
           width: "100%",
           minHeight: NAVBAR_HEIGHT,
-      background: "#0B1F3A",
+          background: "#0B1F3A",
           color: "#fff",
           zIndex: 1000,
           boxSizing: "border-box",
@@ -100,7 +108,8 @@ function Navbar() {
             alignItems: "center",
           }}
         >
-                   {/* LOGO */}
+          {/* LOGO */}
+
           <Link
             to="/"
             onClick={closeMenu}
@@ -118,7 +127,10 @@ function Navbar() {
             }}
           >
             <img
-              src={process.env.PUBLIC_URL + "/images/ICIFMEDE2027_logo.png"}
+              src={
+                process.env.PUBLIC_URL +
+                "/images/ICIFMEDE2027_logo.png"
+              }
               alt="ICIFMEDE 2027"
               className="navbar-logo-img"
               style={{
@@ -130,11 +142,12 @@ function Navbar() {
             />
           </Link>
 
-          {/* HAMBURGER */}
+          {/* HAMBURGER MENU */}
 
           {isMobile && (
             <button
               onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle navigation menu"
               style={{
                 background: "transparent",
                 color: "white",
@@ -166,8 +179,11 @@ function Navbar() {
                 About
               </Link>
 
-              <Link style={linkStyle} to="/authors-corner">
-                Author's Corner
+              <Link
+                style={linkStyle}
+                to="/authors-corner"
+              >
+                Call for Papers
               </Link>
 
               <Link style={linkStyle} to="/committees">
@@ -195,11 +211,17 @@ function Navbar() {
               </Link>
 
               {isLoggedIn ? (
-                <button onClick={logout} style={logoutButton}>
+                <button
+                  onClick={logout}
+                  style={logoutButton}
+                >
                   Logout
                 </button>
               ) : (
-                <Link to="/register" style={registerButton}>
+                <Link
+                  to="/register"
+                  style={registerButton}
+                >
                   Register
                 </Link>
               )}
@@ -220,41 +242,78 @@ function Navbar() {
               padding: "10px",
             }}
           >
-            <Link style={mobileLink} to="/" onClick={closeMenu}>
+            <Link
+              style={mobileLink}
+              to="/"
+              onClick={closeMenu}
+            >
               Home
             </Link>
 
-            <Link style={mobileLink} to="/about" onClick={closeMenu}>
+            <Link
+              style={mobileLink}
+              to="/about"
+              onClick={closeMenu}
+            >
               About
             </Link>
 
-            <Link style={mobileLink} to="/authors-corner" onClick={closeMenu}>
-              Author's Corner
+            <Link
+              style={mobileLink}
+              to="/authors-corner"
+              onClick={closeMenu}
+            >
+              Call for Papers
             </Link>
 
-            <Link style={mobileLink} to="/committees" onClick={closeMenu}>
+            <Link
+              style={mobileLink}
+              to="/committees"
+              onClick={closeMenu}
+            >
               Committees
             </Link>
 
-            <Link style={mobileLink} to="/speakers" onClick={closeMenu}>
+            <Link
+              style={mobileLink}
+              to="/speakers"
+              onClick={closeMenu}
+            >
               Speakers
             </Link>
 
-            <Link style={mobileLink} to="/events" onClick={closeMenu}>
+            <Link
+              style={mobileLink}
+              to="/events"
+              onClick={closeMenu}
+            >
               Events
             </Link>
 
-            <Link style={mobileLink} to="/sponsorship" onClick={closeMenu}>
+            <Link
+              style={mobileLink}
+              to="/sponsorship"
+              onClick={closeMenu}
+            >
               Sponsorship
             </Link>
 
-            <Link style={mobileLink} to="/publications" onClick={closeMenu}>
+            <Link
+              style={mobileLink}
+              to="/publications"
+              onClick={closeMenu}
+            >
               Publications
             </Link>
 
-            <Link style={mobileLink} to="/contact" onClick={closeMenu}>
+            <Link
+              style={mobileLink}
+              to="/contact"
+              onClick={closeMenu}
+            >
               Contact
             </Link>
+
             {isLoggedIn ? (
               <button
                 onClick={() => {
@@ -266,7 +325,11 @@ function Navbar() {
                 Logout
               </button>
             ) : (
-              <Link to="/register" style={registerButton} onClick={closeMenu}>
+              <Link
+                to="/register"
+                style={registerButton}
+                onClick={closeMenu}
+              >
                 Register
               </Link>
             )}
@@ -274,10 +337,11 @@ function Navbar() {
         )}
       </nav>
 
-      {/* Horizontal Line */}
+      {/* HORIZONTAL LINE */}
+
       <div
         style={{
-        position: "relative",
+          position: "relative",
           top: isHome ? `${NAVBAR_HEIGHT}px` : 0,
           width: "100%",
           height: "1px",
@@ -305,13 +369,20 @@ function App() {
 
         <div style={{ flex: 1 }}>
           <Routes>
-            {/* ==================== MAIN PAGES ==================== */}
+            {/* MAIN PAGES */}
 
             <Route path="/" element={<Home />} />
 
             <Route path="/about" element={<About />} />
 
-            <Route path="/authors-corner" element={<AuthorsCorner />} />
+            {/* Call for Papers main page */}
+
+            <Route
+              path="/authors-corner"
+              element={<CallForPapers />}
+            />
+
+            {/* Call for Papers Details */}
 
             <Route
               path="/authors-corner/call-for-papers"
@@ -327,6 +398,9 @@ function App() {
               path="/authors-corner/submission-portal"
               element={<SubmissionPortalDetails />}
             />
+
+            {/* Committee Details */}
+
             <Route
               path="/committees/international-advisory"
               element={<InternationalAdvisoryCommitteeDetails />}
@@ -341,6 +415,9 @@ function App() {
               path="/committees/organizing"
               element={<OrganizingCommitteeDetails />}
             />
+
+            {/* Speaker Details */}
+
             <Route
               path="/speakers/keynote"
               element={<KeynoteSpeakersDetails />}
@@ -350,27 +427,57 @@ function App() {
               path="/speakers/chief-guest"
               element={<ChiefGuestDetails />}
             />
+
+            {/* Event Details */}
+
             <Route
               path="/events/submission-deadline"
               element={<SubmissionDeadlineDetails />}
             />
 
-            <Route path="/events/schedule" element={<EventScheduleDetails />} />
-            <Route path="/committees" element={<Commitees />} />
+            <Route
+              path="/events/schedule"
+              element={<EventScheduleDetails />}
+            />
 
-            <Route path="/speakers" element={<Speakers />} />
+            {/* Other Main Pages */}
 
-            <Route path="/events" element={<Events />} />
+            <Route
+              path="/committees"
+              element={<Commitees />}
+            />
 
-            <Route path="/sponsorship" element={<Sponsorship />} />
+            <Route
+              path="/speakers"
+              element={<Speakers />}
+            />
 
-            <Route path="/publications" element={<Publication />} />
+            <Route
+              path="/events"
+              element={<Events />}
+            />
 
-            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/sponsorship"
+              element={<Sponsorship />}
+            />
 
-            <Route path="/register" element={<Register />} />
+            <Route
+              path="/publications"
+              element={<Publication />}
+            />
 
-            {/* ==================== ABOUT DETAILS ==================== */}
+            <Route
+              path="/contact"
+              element={<Contact />}
+            />
+
+            <Route
+              path="/register"
+              element={<Register />}
+            />
+
+            {/* ABOUT DETAILS */}
 
             <Route
               path="/about/anurag-university"
@@ -382,7 +489,10 @@ function App() {
               element={<MechanicalEngineeringDetails />}
             />
 
-            <Route path="/about/conference" element={<ConferenceDetails />} />
+            <Route
+              path="/about/conference"
+              element={<ConferenceDetails />}
+            />
           </Routes>
         </div>
 

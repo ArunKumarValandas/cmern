@@ -1,325 +1,176 @@
-// // import React from "react";
-
-// // function Events() {
-// //   return (
-// //     <div>
-// //       <h1>Events</h1>
-// //       <p>Conference events and activities.</p>
-// //     </div>
-// //   );
-// // }
-
-// // export default Events;
-
-// import React from "react";
-
-// function Events() {
-//   return (
-//     <>
-//       <style>{`
-//         .events-section {
-//           min-height: 100vh;
-//           padding: 120px 7% 80px;
-//           background: #f5f7fb;
-//         }
-
-//         .events-title {
-//           text-align: center;
-//           color: #073b73;
-//           font-size: 36px;
-//           margin-bottom: 45px;
-//         }
-
-//         .events-cards {
-//           max-width: 800px;
-//           margin: 0 auto;
-
-//           display: grid;
-//           grid-template-columns: repeat(2, 1fr);
-//           gap: 30px;
-//         }
-
-//         .event-card {
-//           background: #ffffff;
-//           padding: 35px 25px;
-//           min-height: 230px;
-
-//           border-radius: 5px;
-
-//           display: flex;
-//           flex-direction: column;
-//           align-items: center;
-//           text-align: center;
-
-//           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-
-//           transition: transform 0.3s ease,
-//                       box-shadow 0.3s ease;
-//         }
-
-//         .event-card:hover {
-//           transform: translateY(-5px);
-
-//           box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
-//         }
-
-//         .event-card h2 {
-//           color: #073b73;
-//           font-size: 22px;
-//           margin: 5px 0 15px;
-//         }
-
-//         .event-card p {
-//           color: #444;
-//           font-size: 15px;
-//           line-height: 1.6;
-
-//           margin: 0 0 25px;
-
-//           flex: 1;
-//         }
-
-//         .event-card button {
-//           background: #073b73;
-//           color: white;
-
-//           border: none;
-//           border-radius: 4px;
-
-//           padding: 10px 25px;
-
-//           font-size: 14px;
-//           cursor: pointer;
-
-//           transition: background 0.3s ease;
-//         }
-
-//         .event-card button:hover {
-//           background: #052d59;
-//         }
-
-//         @media (max-width: 768px) {
-//           .events-section {
-//             padding: 100px 20px 50px;
-//           }
-
-//           .events-title {
-//             font-size: 28px;
-//           }
-
-//           .events-cards {
-//             grid-template-columns: 1fr;
-//           }
-//         }
-//       `}</style>
-
-//       <section className="events-section">
-
-//         <h1 className="events-title">
-//           Events
-//         </h1>
-
-//         <div className="events-cards">
-
-//           {/* Submission Deadline */}
-//           <div className="event-card">
-
-//             <h2>
-//               Submission Deadline
-//             </h2>
-
-//             <p>
-//               Check the deadline for submitting your research
-//               paper to ICIFMEDE 2027.
-//             </p>
-
-//             <button>
-//               View Details
-//             </button>
-
-//           </div>
-
-
-//           {/* Event Schedule */}
-//           <div className="event-card">
-
-//             <h2>
-//               Event Schedule
-//             </h2>
-
-//             <p>
-//               View the complete schedule of conference events,
-//               sessions and activities.
-//             </p>
-
-//             <button>
-//               View Schedule
-//             </button>
-
-//           </div>
-
-//         </div>
-
-//       </section>
-//     </>
-//   );
-// }
-
-// export default Events;
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 function Events() {
-  const navigate = useNavigate();
-
   return (
     <>
       <style>{`
         .events-section {
           min-height: 100vh;
-          padding: 120px 7% 80px;
-          background: #f5f7fb;
+          padding: 35px 20px 80px;
+          background: #e6e6ea;
+          box-sizing: border-box;
+          width: 100%;
         }
 
         .events-title {
-          text-align: center;
-          color: #073b73;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          color: #000000;
           font-size: 36px;
-          margin-bottom: 45px;
+          font-weight: 700;
+          margin: 30px 0 35px;
+        }
+
+        .events-title::before {
+          content: "";
+          display: block;
+          width: 10px;
+          height: 32px;
+          background: #c62828;
+          flex-shrink: 0;
+        }
+
+        .events-container {
+          width: 100%;
+          max-width: 1500px;
+          margin: 0 auto;
+          padding: 35px;
+          background: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+          box-sizing: border-box;
         }
 
         .events-cards {
-          max-width: 900px;
-          margin: 0 auto;
-
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 32px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 25px;
+          width: 100%;
         }
 
         .event-card {
           background: #ffffff;
-          padding: 40px 30px;
-          min-height: 220px;
-
-          border-radius: 5px;
-
+          border: 1px solid #dddddd;
+          border-radius: 6px;
+          padding: 30px 25px;
+          min-height: 200px;
+          box-sizing: border-box;
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
-
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-
-          transition: transform 0.3s ease,
-                      box-shadow 0.3s ease;
+          transition: box-shadow 0.3s ease;
         }
 
         .event-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
         }
 
         .event-card h2 {
           color: #073b73;
           font-size: 26px;
           margin: 5px 0 15px;
+          line-height: 1.4;
         }
 
         .event-card p {
-          color: #444;
+          color: #333333;
           font-size: 16px;
-          line-height: 1.6;
-          margin: 0 0 25px;
-          flex: 1;
+          line-height: 1.7;
+          margin: 0 0 20px;
         }
 
-        .event-card button {
-          background: #073b73;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          padding: 11px 28px;
-          font-size: 15px;
-          cursor: pointer;
-          transition: background 0.3s ease;
-        }
-
-        .event-card button:hover {
-          background: #052d59;
+        .event-status {
+          color: #102f50;
+          font-size: 17px;
+          font-weight: 700;
+          margin-top: auto;
         }
 
         @media (max-width: 768px) {
           .events-section {
-            padding: 100px 20px 50px;
+            padding: 25px 15px 50px;
           }
 
           .events-title {
-            font-size: 28px;
+            font-size: 25px;
+            margin: 25px 0;
+            gap: 10px;
+          }
+
+          .events-title::before {
+            width: 6px;
+            height: 25px;
+          }
+
+          .events-container {
+            padding: 15px;
           }
 
           .events-cards {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 18px;
+          }
+
+          .event-card {
+            padding: 25px 15px;
+            min-height: 180px;
+          }
+
+          .event-card h2 {
+            font-size: 21px;
+          }
+
+          .event-card p {
+            font-size: 14px;
+          }
+
+          .event-status {
+            font-size: 15px;
           }
         }
       `}</style>
 
       <section className="events-section">
-
         <h1 className="events-title">
-          Events
+          EVENTS
         </h1>
 
-        <div className="events-cards">
+        <div className="events-container">
+          <div className="events-cards">
 
-          {/* Submission Deadline */}
-          <div className="event-card">
+            {/* Submission Deadline */}
+            <div className="event-card">
+              <h2>Submission Deadline</h2>
 
-            <h2>
-              Submission Deadline
-            </h2>
+              <p>
+                Check the deadline for submitting your research
+                paper to ICIFMEDE 2027.
+              </p>
 
-            <p>
-              Check the deadline for submitting your research
-              paper to ICIFMEDE 2027.
-            </p>
+              <div className="event-status">
+                In Progress
+              </div>
+            </div>
 
-            <button
-              onClick={() =>
-                navigate("/events/submission-deadline")
-              }
-            >
-              View Details
-            </button>
+            {/* Event Schedule */}
+            <div className="event-card">
+              <h2>Event Schedule</h2>
 
-          </div>
+              <p>
+                View the complete schedule of conference events,
+                sessions and activities.
+              </p>
 
-
-          {/* Event Schedule */}
-          <div className="event-card">
-
-            <h2>
-              Event Schedule
-            </h2>
-
-            <p>
-              View the complete schedule of conference events,
-              sessions and activities.
-            </p>
-
-            <button
-              onClick={() =>
-                navigate("/events/schedule")
-              }
-            >
-              View Schedule
-            </button>
+              <div className="event-status">
+                In Progress
+              </div>
+            </div>
 
           </div>
-
         </div>
-
       </section>
     </>
   );

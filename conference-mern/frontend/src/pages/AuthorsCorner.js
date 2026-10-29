@@ -1,170 +1,80 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
-function AuthorsCorner() {
-  const navigate = useNavigate();
+function CallForPapers() {
+  const isMobile = window.innerWidth <= 768;
+
+  const redBarStyle = {
+    width: "5px",
+    height: "22px",
+    background: "#c62828",
+    marginRight: "10px",
+    flexShrink: 0,
+  };
+
+  const contentStyle = {
+    background: "#ffffff",
+    border: "1px solid #dddddd",
+    borderRadius: "10px",
+    padding: isMobile ? "18px" : "25px",
+    boxSizing: "border-box",
+    lineHeight: 1.7,
+    color: "#222222",
+    fontSize: isMobile ? "14px" : "16px",
+  };
 
   return (
-    <>
-      <style>{`
-        .authors-section {
-          min-height: 100vh;
-          padding: 120px 7% 80px;
-          background: #f5f7fb;
-        }
+    <section
+      className="call-for-papers-section"
+      style={{
+        padding: isMobile ? "20px 15px" : "35px",
+        background: "#e6e6ea",
+        minHeight: "100vh",
+        boxSizing: "border-box",
+      }}
+    >
+      <div
+        className="call-for-papers-heading"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginBottom: "25px",
+        }}
+      >
+        <div style={redBarStyle} />
 
-        .authors-title {
-          text-align: center;
-          color: #073b73;
-          font-size: 36px;
-          margin-bottom: 45px;
-        }
+        <h2
+          style={{
+            margin: 0,
+            fontSize: isMobile ? "20px" : "26px",
+            fontWeight: "bold",
+            color: "#000000",
+            letterSpacing: "0.5px",
+            lineHeight: 1.4,
+          }}
+        >
+          CALL FOR PAPERS
+        </h2>
+      </div>
 
-        .authors-cards {
-          max-width: 1200px;
-          margin: 0 auto;
+      <div className="call-for-papers-content" style={contentStyle}>
+        <p style={{ marginTop: 0, marginBottom: "18px" }}>
+          Authors are invited to submit their original research papers
+          for ICIFMEDE 2027.
+        </p>
 
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 25px;
-        }
+        <p style={{ marginBottom: "18px" }}>
+          Submitted papers should present original research,
+          innovations, and relevant developments in the conference's
+          subject areas.
+        </p>
 
-        .authors-card {
-          background: #ffffff;
-          padding: 35px 25px;
-          min-height: 220px;
-
-          border-radius: 5px;
-
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-
-          transition: transform 0.3s ease,
-                      box-shadow 0.3s ease;
-        }
-
-        .authors-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
-        }
-
-        .authors-card h2 {
-          color: #073b73;
-          font-size: 22px;
-          margin: 5px 0 15px;
-        }
-
-        .authors-card p {
-          color: #444;
-          font-size: 15px;
-          line-height: 1.6;
-          margin: 0 0 25px;
-          flex: 1;
-        }
-
-        .authors-card button {
-          background: #073b73;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          padding: 10px 25px;
-          font-size: 14px;
-          cursor: pointer;
-          transition: background 0.3s ease;
-        }
-
-        .authors-card button:hover {
-          background: #052d59;
-        }
-
-        @media (max-width: 768px) {
-          .authors-section {
-            padding: 100px 20px 50px;
-          }
-
-          .authors-title {
-            font-size: 28px;
-          }
-
-          .authors-cards {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
-
-      <section className="authors-section">
-
-        <h1 className="authors-title">
-          Author's Corner
-        </h1>
-
-        <div className="authors-cards">
-
-          {/* Call for Paper */}
-          <div className="authors-card">
-            <h2>Call for Paper</h2>
-
-            <p>
-              Submit your original research work and contribute
-              to ICIFMEDE 2027.
-            </p>
-
-            <button
-              onClick={() =>
-                navigate("/authors-corner/call-for-papers")
-              }
-            >
-              View Details
-            </button>
-          </div>
-
-
-          {/* Conference Tracks */}
-          <div className="authors-card">
-            <h2>Conference Tracks</h2>
-
-            <p>
-              Explore the conference tracks and research areas
-              covered by ICIFMEDE 2027.
-            </p>
-
-            <button
-              onClick={() =>
-                navigate("/authors-corner/conference-tracks")
-              }
-            >
-              View Details
-            </button>
-          </div>
-
-
-          {/* Submission Portal */}
-          <div className="authors-card">
-            <h2>Submission Portal</h2>
-
-            <p>
-              Submit your research paper through the official
-              conference submission portal.
-            </p>
-
-            <button
-              onClick={() =>
-                navigate("/authors-corner/submission-portal")
-              }
-            >
-              Submit Paper
-            </button>
-          </div>
-
-        </div>
-
-      </section>
-    </>
+        <p style={{ marginBottom: 0 }}>
+          Please follow the conference submission guidelines when
+          preparing your manuscript.
+        </p>
+      </div>
+    </section>
   );
 }
 
-export default AuthorsCorner;
+export default CallForPapers;
