@@ -20,9 +20,9 @@ export default function Committees() {
     { no: 7, name: "Dr. Krishna Pakala", designation: "Associate", department: "Mechanical and Biomedical Engineering, Boise State University", country: "USA" },
     { no: 8, name: "Dr. Rama Raju Ramgopal", designation: "Associate", department: "Mechanical Engineering, University of Toronto", country: "Canada" },
     { no: 9, name: "Dr. Rama Rao Karri", designation: "Professor", department: "Faculty of Engineering, Universiti Teknologi Brunei", country: "Brunei Darussalam" },
-    { no: 10, name: "Dr. Asma Perveen", designation: "Associate", department: "Nazarbayev University, Kazakhstan; specialization: Hybrid Machining Processes", country: "Kazakhstan" },
-    { no: 11, name: "Dr. Okokpujie Imhade Prin", designation: "Senior Lecturer", department: "Afe Babalola University, Nigeria; specialization: Design and Production", country: "Nigeria" },
-    { no: 12, name: "A. Nagendra Krishna", designation: "Senior Engineer", department: "Mechanical Maintenance department", country: "Jordan" },
+    { no: 10, name: "Dr. Asma Perveen", designation: "Associate", department: "Nazarbayev University, Kazakhstan; Hybrid Machining Processes", country: "Kazakhstan" },
+    { no: 11, name: "Dr. Okokpujie Imhade Prin", designation: "Senior Lecturer", department: "Afe Babalola University, Nigeria; Design and Production", country: "Nigeria" },
+    { no: 12, name: "A. Nagendra Krishna", designation: "Senior Engineer", department: "Mechanical Maintenance Department", country: "Jordan" },
     { no: 13, name: "Dr. Ho Seok Ahn", designation: "Professor", department: "Department of Electrical, Computer and Software Engineering", country: "New Zealand" },
     { no: 14, name: "Redwan Ferdous", designation: "Ex-Com member", department: "Bangladesh Open Source Network", country: "Bangladesh" },
     { no: 15, name: "Mr Samuel Milton", designation: "Research Executive", department: "Sandvik Tooling, France", country: "France" },
@@ -161,7 +161,10 @@ export default function Committees() {
             : organizingMembers;
 
         return (
-          <section key={title} style={{ marginBottom: "35px" }}>
+          <section
+            key={title}
+            style={{ marginBottom: "35px" }}
+          >
             {/* SECTION HEADING */}
             <div
               style={{
@@ -199,7 +202,7 @@ export default function Committees() {
                 width: "100%",
               }}
             >
-              {/* RESPONSIVE CARDS */}
+              {/* RESPONSIVE MEMBER CARDS */}
               <div
                 style={{
                   display: "grid",
@@ -256,12 +259,6 @@ export default function Committees() {
                     >
                       {member.name}
                     </h3>
-
-                    {/* DESIGNATION */}
-                    <p style={labelStyle}>Designation</p>
-                    <p style={valueStyle}>
-                      {member.designation}
-                    </p>
 
                     {/* DEPARTMENT / INSTITUTION */}
                     {member.department && (
