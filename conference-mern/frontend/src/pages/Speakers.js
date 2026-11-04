@@ -2,8 +2,6 @@
 import React from "react";
 
 function Speakers() {
-  const isMobile = window.innerWidth <= 768;
-
   return (
     <>
       <style>{`
