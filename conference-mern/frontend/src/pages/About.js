@@ -6,96 +6,117 @@ export default function About() {
 
   const sections = [
     {
-      title: "ABOUT ANURAG UNIVERSITY",
+      title: "ABOUT ANURAG UNIVERSITY (AU)",
       content: (
         <>
-          <h3>ABOUT ANURAG UNIVERSITY</h3>
-
           <p>
             Anurag University (formerly known as Anurag Group
             of Institutions) was established in 2002 and has
-            evolved into a leading educational institution in
-            Telangana. It focuses on providing quality higher
-            education, promoting research, encouraging
-            innovation, and developing technical skills to
-            prepare students for the modern technological world.
+            evolved into one of the top universities in
+            Telangana State. It is well reputed for its pursuit
+            of excellence by providing technical education
+            with high academic standards. AU utilizes Outcome
+            Based Education techniques and Blended Pedagogy
+            to help students navigate the rapidly changing
+            landscape of the modern-day technological world.
           </p>
 
           <p>
-            <strong>NIRF 2027</strong> | Quality Education |
-            Technical Excellence
+            <strong>Institutional Excellence:</strong>
+            <br />
+            <strong>Top Accreditations & NIRF Rankings:</strong>{" "}
+            Highly ranked among universities and engineering
+            institutions across India, recognized for
+            state-of-the-art infrastructure, research centers,
+            and academic excellence.
           </p>
         </>
       ),
     },
+
     {
-      title: "DEPARTMENT OF MECHANICAL ENGINEERING",
+      title: "ABOUT DEPARTMENT OF MECHANICAL ENGINEERING",
       content: (
         <>
           <p>
             The Department of Mechanical Engineering was
-            established in 2004 and was accredited by NBA
-            under Tier-I in 2015. It was subsequently
-            reaccredited, with the stated validity extending
-            to June 2025.
+            established in the year 2004 and was accredited
+            by NBA under Tier-I in 2015. It was reaccredited
+            subsequently twice with validity extending up
+            to 2028.
           </p>
 
           <p>
-            The department comprises qualified faculty
-            members and technical staff, including
-            doctorates with diverse specialisations.
+            The department comprises well-qualified and
+            committed 34 faculty members and 16 technical
+            staff, among which 19 are doctorates with
+            diverse specializations. The faculty members
+            are actively engaged in research and scholarly
+            activities.
           </p>
 
           <ul>
             <li>
-              Value-added courses on{" "}
-              <strong>SOLIDWORKS, CREO and ANSYS.</strong>
+              Strategic MoU Collaborations with Leading
+              Global MNCs to Strengthen Industry–Academia
+              Partnerships.
             </li>
 
             <li>
-              <strong>19 MoUs</strong> with core engineering
-              companies.
+              Access to a Wide Range of Prestigious
+              National and International E-Journals.
             </li>
 
             <li>
-              Department library with over{" "}
-              <strong>300 volumes</strong> and e-journals.
+              Active Professional Chapters – ISTE, SAE,
+              IEEE-RAS, and NTSC – Encouraging Technical
+              Learning and Professional Growth.
             </li>
 
             <li>
-              Professional chapters including ISTE, SAE,
-              IEEE-RAS and NTSC, along with student clubs
-              such as FEM, CAD, MARK and DiMaC.
+              Active Student Clubs – Thermex, CAD, MARK,
+              and DiMaC – Promoting Technical Skills,
+              Creativity, and Teamwork.
             </li>
           </ul>
         </>
       ),
     },
+
     {
       title: "ABOUT THE CONFERENCE",
       content: (
         <>
           <p>
-            The International Conference on Innovations in
-            Future Mechanical Engineering in Digital Era
-            (ICIFMEDE 2027) aims to bring together experts
-            from academic, scientific and industrial
-            communities to address emerging challenges,
-            present research findings, exchange ideas and
-            explore future directions in mechanical engineering.
+            The <strong>2nd International Conference on
+            Innovations and Future Scope of Mechanical
+            Engineering in Digital Era (ICIFMEDE 2027)</strong>{" "}
+            will be held during June 10–11, 2027, at Anurag
+            University, Hyderabad.
           </p>
 
           <p>
-            The conference provides a platform for researchers,
-            academicians, industry professionals and students
-            to share innovative ideas, exchange knowledge and
-            discuss advancements in mechanical engineering
-            in the digital era.
+            The conference aims to bring together experts
+            from academic, scientific, and industry
+            communities from all over the globe to a common
+            platform to address new challenges, present
+            their latest research findings, ideas,
+            developments and perspectives of the future
+            directions in the field of Mechanical Engineering.
           </p>
 
           <p>
-            <strong>Date:</strong> June 10–11, 2027
+            ICIFMEDE 2027 invites all the researchers
+            to participate in the conference.
+          </p>
+
+          <p style={{ marginTop: "18px" }}>
+            <strong>Date:</strong>{" "}
+            <span style={{ fontSize: "18px", color: "#c62828" }}>
+              June 10–11, 2027
+            </span>
             <br />
+
             <strong>Venue:</strong> Anurag University,
             Hyderabad, Telangana, India
           </p>

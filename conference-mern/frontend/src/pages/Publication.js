@@ -103,29 +103,36 @@ export default function Publication() {
       {/* PUBLICATION */}
       <SectionTitle>PUBLICATION</SectionTitle>
 
-      <div style={cardStyle}>
-       
-<p
-  style={{
-    fontSize: isMobile ? "12px" : "15px",
-    margin: 0,
-  }}
->
-  All accepted papers for the conference will be published in{" "}
-  <strong>Scopus-indexed Conference Proceedings.</strong>
-</p>
+ 
 
-{/* 
-        <p
-          style={{
-            fontSize: isMobile ? "12px" : "15px",
-            margin: 0,
-          }}
-        >
-          Selected abstracts may be included in the conference
-          souvenir with ISBN.
-        </p> */}
-      </div>
+<div style={cardStyle}>
+  <ul
+    style={{
+      fontSize: isMobile ? "13px" : "17px",
+      lineHeight: 1.6,
+      margin: 0,
+      paddingLeft: "25px",
+      textAlign: "justify",
+    }}
+  >
+    <li style={{ marginBottom: "5px" }}>
+      All accepted papers for the conference will be
+      published in{" "}
+      <strong>
+        Scopus-indexed Conference Proceedings.
+      </strong>
+    </li>
+
+    <li>
+      <strong>CMT Acknowledgement:</strong> The Microsoft
+      CMT service is used for managing the peer-reviewing
+      process for this conference. This service is provided
+      for free by Microsoft and they bore all expenses,
+      including costs for Azure cloud services as well as
+      for software development and support.
+    </li>
+  </ul>
+</div>
 
       {/* PUBLICATION PARTNER */}
       <div style={{ marginTop: "45px" }}>

@@ -56,13 +56,13 @@
 /* EVENT DATE COLOR */
 .hero-content .event-date {
   color: #FFD700;
-  font-size: clamp(14px, 1.4vw, 19px);
+  font-size: clamp(20px, 2vw, 30px);
   line-height: 1.4;
   margin: 6px 0;
 }
 
 .hero-content p {
-  font-size: clamp(14px, 1.4vw, 19px);
+  font-size: clamp(14px, 1.5vw, 19px);
   line-height: 1.4;
   margin: 6px 0;
 }

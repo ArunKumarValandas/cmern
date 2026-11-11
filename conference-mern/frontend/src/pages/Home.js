@@ -14,7 +14,7 @@ export default function Home() {
 
           <h2 className="hero-main-heading hero-conference-title">
             <br/>
-             INTERNATIONAL CONFERENCE ON
+            2nd INTERNATIONAL CONFERENCE ON
             INNOVATIONS AND FUTURE SCOPE OF
             <br />
             MECHANICAL ENGINEERING IN DIGITAL ERA
@@ -43,8 +43,8 @@ export default function Home() {
 
             <p className="contact-details">
               ✉ icifmede2027@anurag.edu.in
-              <span>|</span>
-              ☎ +91 98765 43210
+           
+              
             </p>
 
             <p className="copyright">
